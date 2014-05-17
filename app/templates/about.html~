@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Northfield Systems</title>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+<ul>
+
+<div id="login">
+<ul>
+<li>Username: <input id='username_input' name='username' type='text'></li>
+<li>Password: <input id='password_input' name='password' type='password'></li>
+<li><input id='login-button' type='submit' value='Login'></li>
+</ul>
+</div>
+
+<div id="header">
+<img src="images/Picture 1.png" width="339" height="179" alt="Logo" />
+
+<!-- navigation -->
+<div id="nav">
+<ul>
+<li><a href="index.html">Home
+</a></li>
+<li><a href="about.html" style="background-color:#F60">About
+</a></li>
+<li><a href="vsms.html">VSMS
+</a></li>
+<li><a href="contact.html">Contact
+</a></li>
+<li><a href="extra.html">Your VSMS
+</a></li>
+</ul>
+</div>
+</div>
+
+<div id="homecontent" >
+<h1> About </h1>
+
+<p> All members of our team are currently studying the same subject: Engineering Design and
+Management 3, at the University of Wollongong. This subject requires students to work in teams to develop and market a project within the span of two university sessions. This year, the subject coordinator allowed teams to participate in the Telstra M2M challenge. Northfield Systems was formed by all those in the class who wish to prove they are the next generation of Australian innovators.</p>
+<p> Our team comprises of eleven students studying various engineering degrees, namely
+mechatronics, telecommunications, computer and electrical engineering. As a result, we have a strong technical background and are driven by performance.</p>
+<p>Our university requires all engineering students to receive training in project management,
+marketing and ethics. This means that even though all our members have a strong engineering
+focus, we are also proficient in all areas of the project lifecycle, from conception to marketing
+and final delivery. </p>
+</div>
+
+<div id="divider"></div>
+
+
+<div id="footer">
+<ul>
+<li><a href="index.html">Home
+</a></li>
+<li><a href="about.html">About
+</a></li>
+<li><a href="vsms.html">VSMS
+</a></li>
+<li><a href="contact.html">Contact
+</a></li>
+<li><a href="extra.html">Your VSMS
+</a></li>
+</ul>
+<p>The Northfield Systems name and logo are trademarks of A N Blake Investments Pty. Ltd.
+© 2014, Northfields Systems.</p>
+</div>
+</ul>
+</body>
+</html>

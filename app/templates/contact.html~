@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Northfield Systems</title>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<ul>
+
+<div id="login">
+<ul>
+<li>Username: <input id='username_input' name='username' type='text'></li>
+<li>Password: <input id='password_input' name='password' type='password'></li>
+<li><input id='login-button' type='submit' value='Login'></li>
+</ul>
+</div>
+
+<div id="header">
+<img src="images/Picture 1.png" width="339" height="179" alt="Logo" />
+
+<!-- navigation -->
+<div id="nav">
+<ul>
+<li><a href="index.html">Home
+</a></li>
+<li><a href="about.html">About
+</a></li>
+<li><a href="vsms.html">VSMS
+</a></li>
+<li><a href="contact.html" style="background-color:#F60">Contact
+</a></li>
+<li><a href="extra.html">Your VSMS
+</a></li>
+</ul>
+</div>
+
+</div>
+<div id="homecontent">
+<h1> Conact </h1>
+
+<table>
+<tr>
+	<td>Northfield Systems M2M Team at University of Wollongong<br /></td>
+</tr>
+<tr>
+	<td>Team Members</td>
+</tr>
+</table>
+<br />
+<table>
+<tr>
+  <td>Brendan Butters</td>
+  <td>Andrew Tomlinson</td>		
+</tr>
+<tr>
+  <td>James Firman</td>
+  <td>Brendan Banfield</td>		
+  
+</tr>
+<tr>
+  <td>Ben Tomkins</td>
+  <td>Scott Tilman</td>		
+</tr>
+<tr>
+  <td>Matthew Clancy</td>
+  <td>David Williams</td>		
+</tr>
+<tr>
+  <td>Jason Causser</td>
+  <td>Tim Davies</td>		
+</tr>
+<tr>
+  <td>Jacob Constable</td>	
+</tr>
+</table>
+
+</div>
+
+<div id="divider"></div>
+
+<div id="footer">
+<ul>
+<li><a href="index.html">Home
+</a></li>
+<li><a href="about.html">About
+</a></li>
+<li><a href="vsms.html">VSMS
+</a></li>
+<li><a href="contact.html">Contact
+</a></li>
+<li><a href="extra.html">Your VSMS
+</a></li>
+</ul>
+<p>The Northfield Systems name and logo are trademarks of A N Blake Investments Pty. Ltd.
+© 2014, Northfields Systems.</p>
+</div>
+
+</ul>
+</body>
+</html>

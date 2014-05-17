@@ -1,0 +1,19 @@
+{% extends "head.html" %}
+
+{% block content %}
+
+<div id="homecontent">
+<h1> Vehicle Safety Monitoring System (VSMS)</h1>
+
+<p> The TSMS monitors tire wear and conditions using a number of metrics; namely, tire wear level, tire temperature, number of wheel revolutions (distance travelled), wheel speed, vehicle speed and the location of the vehicle. To gather these parameters the TSMS utilises two main systems: inexpensive sensors embedded in the tires and a GPS device, see Figure 1. The data from these two devices is feed to a small central On Board Computer (OBC) fitted to the vehicle (trailer or prime mover). The OBC then periodically transmits the sensor data, via the 3G/4G LTE Network, to a datacentre where it is securely stored in a database. Customers can then access their TSMS data from any computer or web-enabled device through a simple and secure website.</p>
+<img src="{{url_for('static',filename='wires.png')}}"width="453" height="200" />
+<p>
+The tire sensor system consists of two main parts: the sensors embedded into the tire at the time of the tire's manufacture (or re-treading) and the Near Field Communication (NFC) controller. These sensors embedded into the tire transmit their readings via NFC techniques to the NFC
+controller, located above the tire in the mudguard. The NFC controller then sends the readings to the OCB via a wired communication link.</p> 
+<p>The GPS and 3G/4G LTE mobile broadband modem are integrated into the one device, the AirCard 760S from Netgear. This is device is then interfaced to the OBC via a Universal Serial Bus (USB) connection. The OBC periodically polls the AirCard for the GPS coordinates. At predetermined intervals the OBC will assemble a packet to send to the datacentre. </p>
+<p>
+<a href="extra.html">CHECK YOUR TYRES!
+</a></p>
+</div>
+
+{% endblock %}
