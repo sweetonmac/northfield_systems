@@ -13,15 +13,18 @@
 <ul>
 
 <div id="login">
+
+<form action="" method=post class="form-horizontal">
 <ul>
-<li>Username: <input id='username_input' name='username' type='text'></li>
-<li>Password: <input id='password_input' name='password' type='password'></li>
+<li>Username: <input id='username' name='username' type='text'></li>
+<li>Password: <input id='password' name='password' type='password'></li>
 <li><input id='login-button' type='submit' value='Login'></li>
 </ul>
+</form>
 </div>
 
 <div id="header">
-<img src="{{url_for('static',filename='Picture 1.png')}}" width="339" height="179" alt="Logo" />
+
 
 <!-- navigation -->
 <div id="nav">
@@ -38,6 +41,7 @@
 </a></li>
 </ul>
 </div>
+<img src="{{url_for('static',filename='Picture 1.png')}}" width="339" height="179" alt="Logo" />
 
 </div>
 
