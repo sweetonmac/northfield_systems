@@ -1,0 +1,58 @@
+#Formating program for jane
+
+#input file name (must be formated 1 word per line a return character at the end)
+filename = input('Enter the file name (full path eg c://Users ect): ')
+f = open(filename)
+outfilename = input('Enter the output file name(full path): ')
+
+
+#import all lines from file
+lines = f.readlines()
+#get length of file
+length = len(lines)
+
+#work out longest word length
+wLength = len(lines[0])
+x = 0
+for x in range(0,length):
+	if wLength < len(lines[x]):
+		wLength = len(lines[x])
+
+#set index for inquist array starting at 1
+y = 1
+x = 0
+#create list to keep track of where words begin
+point = []
+
+#create new output file
+
+o = open(outfilename,"w")
+
+
+#loop for each line
+for x in range(0,length):
+#set start point for current word
+        point.append(y)
+
+#loop for each letter in the line
+        for i in range(0,len(lines[x])-1):
+                s = '/ '+ repr(y) + ' = "' + lines[x][i] + '"' + '\n'
+                o.write(s)
+                y=y+1
+        for k in range (i, wLength-2):
+                s = '/ '+ repr(y) + ' = " "'	+ '\n'
+                o.write(s)
+                y = y+1
+
+
+#create break for pointer array
+o.write('\n')
+o.write('\n')
+
+#write pointer array to file
+for x in range(0,len(point)):
+            o.write('/ '+ repr(x) + ' = "' + repr(point[x]) + '"' + '\n')   
+
+#close the files
+o.close()
+f.close()
