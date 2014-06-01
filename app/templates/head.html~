@@ -10,6 +10,14 @@
 </head>
 
 <body>
+    {% if message %}
+    message: {{message}} /n
+    {% endif %}
+    {% if session['username'] %}
+    Logged in as {{session['username']}}
+    {% else %}
+    Not logged in
+    {% endif %}
 <ul>
 
 <div id="login">
@@ -24,7 +32,7 @@
 </div>
 
 <div id="header">
-<img src="{{url_for('static',filename='Picture 1.png')}}" width="339" height="179" alt="Logo" />
+
 
 <!-- navigation -->
 <div id="nav">
@@ -41,6 +49,7 @@
 </a></li>
 </ul>
 </div>
+<img src="{{url_for('static',filename='Picture 1.png')}}" width="339" height="179" alt="Logo" />
 
 </div>
 

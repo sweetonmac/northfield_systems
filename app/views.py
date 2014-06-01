@@ -39,35 +39,69 @@ def check_user(username, password):
 
 
 @app.route('/',methods=['GET', 'POST'])
+
 @app.route('/index',methods=['GET', 'POST'])
 def index():
+	message = ''
 	if request.method =='POST':
 		username = request.form['username']
 		password = request.form['password'] 
 		if check_user(username, password) == 1:
-			return 'Logged in as %s' % session['username']
+			message = 'login sucsessful'
 		else:
-			return 'failed to log in'
+			message = 'failed to login'
 	
-	return render_template("index.html")
+	return render_template("index.html",message=message)
 
-@app.route('/about')
+@app.route('/about',methods=['GET', 'POST'])
 def about():
-	return render_template('about.html')
+	message = ''
+	if request.method =='POST':
+		username = request.form['username']
+		password = request.form['password'] 
+		if check_user(username, password) == 1:
+			message = 'login sucsessful'
+		else:
+			message = 'failed to login'
+	return render_template('about.html',message=message)
 
 
-@app.route('/vsms')
+@app.route('/vsms',methods=['GET', 'POST'])
 def vsms():
-	return render_template('vsms.html')
+	message = ''
+	if request.method =='POST':
+		username = request.form['username']
+		password = request.form['password'] 
+		if check_user(username, password) == 1:
+			message = 'login sucsessful'
+		else:
+			message = 'failed to login'
+	return render_template('vsms.html',message=message)
 
 
-@app.route('/contact')
+@app.route('/contact',methods=['GET', 'POST'])
 def contact():
-	return render_template('contact.html')
+	message = ''
+	if request.method =='POST':
+		username = request.form['username']
+		password = request.form['password'] 
+		if check_user(username, password) == 1:
+			message = 'login sucsessful'
+		else:
+			message = 'failed to login'
+	return render_template('contact.html',message=message)
 
-@app.route('/extra')
+@app.route('/extra',methods=['GET', 'POST'])
 def extra():
-	return render_template('extra.html')
+	message = ''
+	if request.method =='POST':
+		username = request.form['username']
+		password = request.form['password'] 
+		if check_user(username, password) == 1:
+			message = 'login sucsessful'
+		else:
+			message = 'failed to login'
+	return render_template('extra.html',message=message)
 
 
 @app.route('/plot')
@@ -85,6 +119,10 @@ def plot():
 		return render_template("plot.html")
 	else:
 		return redirect('/index')
+@app.route('/logout')
+def logout():
+	session.clear()
+	return redirect('/index')
 
 
 
@@ -103,8 +141,7 @@ def upl():
 
 @app.route('/piup', methods=['GET', 'POST'])
 def piup():	
-	if request.method =='POST':
-		init_db()		
+	if request.method =='POST':		
 		db = get_db()
 		file = request.files['file']
 		if file and allowed_file(file.filename):
@@ -147,6 +184,13 @@ def piup():
 
 	else:
 		return render_template("piup.html")
+
+@app.route('/data', methods=['GET', 'POST'])
+def data():
+	db = get_db()
+	cur = db.execute('select imei, imsi, thedate, time , cpuid, lat, lon , alt , speed ,Rcount,temp,lev,spare2 from records')
+	data = [dict(imei = row[0], imsi = row[1], thedate = row[2], time = row[3], cpuid = row[4], lat = row[5], lon = row[6], alt = row[7], speed = row[8], rcount = row[9], temp = row[10], lev = row[11], spare2 = row[12]) for row in cur.fetchall()]
+	return render_template("data.html", data = data)
 
 #################################
 #       Database methods        #

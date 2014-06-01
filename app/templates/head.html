@@ -10,6 +10,14 @@
 </head>
 
 <body>
+    {% if message %}
+    message: {{message}}   
+    {% endif %}
+    {% if session['username'] %}
+    Logged in as {{session['username']}}
+    {% else %}
+    Not logged in
+    {% endif %}
 <ul>
 
 <div id="login">
