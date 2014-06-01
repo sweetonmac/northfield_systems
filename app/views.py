@@ -40,6 +40,10 @@ def check_user(username, password):
 
 @app.route('/',methods=['GET', 'POST'])
 
+@app.route('/db')
+def db():
+	init_db()
+
 @app.route('/index',methods=['GET', 'POST'])
 def index():
 	message = ''
@@ -169,7 +173,7 @@ def piup():
 			for x in range(1,len(tmp)-1):
 			    tmp2 = tmp[x].split('&')
 			    thedate = str(float(thedate) - float(tmp2[0]))
-			    time = ("%13.6F" %(float(time) - float(tmp2[1]))).replace(' ','0')
+			    time = (float(time) - float(tmp2[1]))
 			    lat = str(float(lat) - float(tmp2[2]))
 			    lon = str(float(lon) - float(tmp2[3]))
 			    alt = str(float(alt) - float(tmp2[4]))
