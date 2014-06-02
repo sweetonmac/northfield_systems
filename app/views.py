@@ -173,7 +173,7 @@ def piup():
 			for x in range(1,len(tmp)-1):
 			    tmp2 = tmp[x].split('&')
 			    thedate = str(int(thedate) - int(tmp2[0]))
-			    time =  str(int(time) - int(tmp2[1]))
+			    time =  ('%6d' %((int(time) - int(tmp2[1])))).replace(' ','0')
 			    lat = str(float(lat) - float(tmp2[2]))
 			    lon = str(float(lon) - float(tmp2[3]))
 			    alt = str(float(alt) - float(tmp2[4]))
