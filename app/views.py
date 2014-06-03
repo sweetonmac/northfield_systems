@@ -121,7 +121,10 @@ def plot():
 		return redirect('/index')
 	
 	if check_user(username, key) == 1:
-		return render_template("plot.html")
+		db = get_db()
+		cur = db.execute('select imei, imsi, thedate, time , cpuid, lat, lon , alt , speed ,Rcount,temp,lev,spare2 from records')
+		data = [dict(imei = row[0], imsi = row[1], thedate = row[2], time = row[3], cpuid = row[4], lat = row[5], lon = row[6], alt = row[7], speed = row[8], Rcount = row[9], temp = row[10], lev = row[11], spare2 = row[12]) for row in cur.fetchall()]
+		return render_template("plot.html", data = data)
 	else:
 		return redirect('/index')
 @app.route('/logout')
