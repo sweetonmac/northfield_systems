@@ -314,7 +314,7 @@ def getVelHoriz(r):
     """Extract VelHoriz from GPSLOC response and format for transmission to server"""
     z =  re.search('VelHoriz: ([\.\d]+)', r)
     if not z:
-        return None
+        return 0
     else:
     	VelHoriz = float(z.group(1))
     	print '####VelHoriz####' + str(VelHoriz) + '########'
@@ -323,7 +323,7 @@ def getVelVert(r):
     """Extract VelHoriz from GPSLOC response and format for transmission to server"""
     z =  re.search('VelVert: ([\.\d]+)', r)
     if not z:
-        return None
+        return 0
     else:
     	VelHoriz = float(z.group(1))
     	print '####VelVert####' + str(VelVert) + '########'
@@ -359,12 +359,14 @@ def postJsonM2MServer(targetUrl, latitude, longitude, timedateUTC, imei, imsi, c
     #UploadResult = resp2.getcode()
     theLog.write(postdata + '\n')
     UploadResult = 200
-#    alt = 10
-#    speed = 10
-    rcount = 10
-    temp = 10
-    spare = 10
-    spare2 = 10
+#   alt = 10
+#   speed = 10
+    rcount = getPic()
+    temp = getPic()
+    spare = getPic()
+    spare2 = getPic()
+    
+    
     encode(imei, imsi , timedateUTC, cpuID, latitude, longitude, alt, speed, rcount, temp, spare, spare2)
     if Fcount > 4:
     	upl()
@@ -374,6 +376,11 @@ def postJsonM2MServer(targetUrl, latitude, longitude, timedateUTC, imei, imsi, c
         print "[FAIL] Upload HTTP Error", UploadResult
     return UploadResult
 
+
+def getPic():
+	#STUB#
+	##add code to extract tyre data from pic microcontroller
+	return 10
 
 def encode(imei, imsi , datetime, cpuID, latitude, longitude, alt, speed, rcount, temp, spare, spare2):
 	global newPacket
@@ -461,7 +468,8 @@ def upl():
 	url = 'http://203.42.134.72/piup'
 	files = {'file': open(outfilename,'rb')}
 	r = requests.post(url, files=files)
-	print r.text
+	#print r.text
+	lcdWrite(r)
 	global Fcount
 	global newPacket
 	Fcount = 0
@@ -469,6 +477,12 @@ def upl():
 	o = open(outfilename,"w")
 	o.close()
 	##erase file###
+
+def lcdWrite(r):
+	#STUB#
+	#add code to output to LCD screen on hardware#
+	print r.text
+
 
 ###############################################################
 # Code to manage state machine for getting GPS and modem data #
