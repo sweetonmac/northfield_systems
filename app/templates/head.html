@@ -37,15 +37,16 @@
 <!-- navigation -->
 <div id="nav">
 <ul>
-<li><a href="{{url_for('index')}}">Home
+<li><a href="{{url_for('index')}}"{% if page == "Home" %}style="background-color:#F60"{% endif %}>Home
 </a></li>
-<li><a href="{{url_for('about')}}">About
+<li><a href="{{url_for('about')}}"{% if page == "About" %}style="background-color:#F60"{% endif %}>About
 </a></li>
-<li><a href="{{url_for('vsms')}}">VSMS
+<li><a href="{{url_for('vsms')}}"{% if page == "VSMS" %}style="background-color:#F60"{% endif %}>VSMS
 </a></li>
-<li><a href="{{url_for('contact')}}" style="background-color:#F60">Contact
+<li><a href="{{url_for('contact')}}"{% if page == "Contact" %}style="background-color:#F60"{% endif %} 
+>Contact
 </a></li>
-<li><a href="{{url_for('extra')}}">Your VSMS
+<li><a href="{{url_for('extra')}}"{% if page == "Your VSMS" %}style="background-color:#F60"{% endif %}>Your VSMS
 </a></li>
 </ul>
 </div>

@@ -47,6 +47,7 @@ def db():
 @app.route('/',methods=['GET', 'POST'])
 @app.route('/index',methods=['GET', 'POST'])
 def index():
+	page = "Home"
 	message = ''
 	if request.method =='POST':
 		username = request.form['username']
@@ -56,10 +57,11 @@ def index():
 		else:
 			message = 'failed to login'
 	
-	return render_template("index.html",message=message)
+	return render_template("index.html",message=message,page = page)
 
 @app.route('/about',methods=['GET', 'POST'])
 def about():
+	page = "About"
 	message = ''
 	if request.method =='POST':
 		username = request.form['username']
@@ -68,11 +70,12 @@ def about():
 			message = 'login sucsessful'
 		else:
 			message = 'failed to login'
-	return render_template('about.html',message=message)
+	return render_template('about.html',message=message,page = page)
 
 
 @app.route('/vsms',methods=['GET', 'POST'])
 def vsms():
+	page = "VSMS"
 	message = ''
 	if request.method =='POST':
 		username = request.form['username']
@@ -81,11 +84,12 @@ def vsms():
 			message = 'login sucsessful'
 		else:
 			message = 'failed to login'
-	return render_template('vsms.html',message=message)
+	return render_template('vsms.html',message=message,page=page)
 
 
 @app.route('/contact',methods=['GET', 'POST'])
 def contact():
+	page = "Contact"
 	message = ''
 	if request.method =='POST':
 		username = request.form['username']
@@ -94,10 +98,11 @@ def contact():
 			message = 'login sucsessful'
 		else:
 			message = 'failed to login'
-	return render_template('contact.html',message=message)
+	return render_template('contact.html',message=message,page=page)
 
 @app.route('/extra',methods=['GET', 'POST'])
 def extra():
+	page = "Your VSMS"
 	message = ''
 	if request.method =='POST':
 		username = request.form['username']
@@ -106,7 +111,7 @@ def extra():
 			message = 'login sucsessful'
 		else:
 			message = 'failed to login'
-	return render_template('extra.html',message=message)
+	return render_template('extra.html',message=message,page = page)
 
 
 @app.route('/plot')

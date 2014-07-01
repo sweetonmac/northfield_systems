@@ -11,7 +11,7 @@
 
 <body>
     {% if message %}
-    message: {{message}} /n
+    message: {{message}}   
     {% endif %}
     {% if session['username'] %}
     Logged in as {{session['username']}}
@@ -43,7 +43,8 @@
 </a></li>
 <li><a href="{{url_for('vsms')}}">VSMS
 </a></li>
-<li><a href="{{url_for('contact')}}" style="background-color:#F60">Contact
+<li><a href="{{url_for('contact')}}"  {% if page == "contact" %}    style="background-color:#F60"{% endif %} 
+>Contact
 </a></li>
 <li><a href="{{url_for('extra')}}">Your VSMS
 </a></li>
