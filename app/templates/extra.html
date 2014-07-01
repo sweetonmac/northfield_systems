@@ -2,4 +2,25 @@
 
 {% block content %}
 
+<script type="text/javascript" src="{{url_for('static', filename = 'plot/jquery.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename = 'plot/jquery.jqplot.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'plot/jquery.jqplot.css')}}"/>
+
+<script type="text/javascript" src="{{url_for('static', filename = 'plot/plugins/jqplot.barRenderer.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename = 'plot/plugins/jqplot.categoryAxisRenderer.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename = 'plot/plugins/jqplot.pointLabels.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename = 'plot/plugins/jqplot.canvasTextRenderer.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename = 'plot/plugins/jqplot.canvasAxisLabelRenderer.min.js')}}"></script>
+
+        <script>
+$(document).ready(function(){
+  var plot1 = $.jqplot ('chart1', [[3,7,9,1,4,6,8,2,5]]);
+});
+        </script>
+
+        <div id="chart1" style="height:400px;width:300px; "></div>
+
+        <br><a href="/Test/index.html">Home</a>
+
+
 {% endblock %}
