@@ -1,0 +1,50 @@
+AT+CIMI
+505013443721521
+
+OK
+###AT+CGSN
+359822040936746
+
+OK
+###Connected###ACTIVE###[FAIL]AT!GPSTRACK=1,255,100,600,1
+ERROR
+###AT!GPSSTATUS?
+Current time: 2014 10 11 5 15:18:14
+
+2014 10 11 5 15:15:36 Last Fix Status    = FAIL,  FAILCODE = 12
+2014 10 11 5 14:54:20 Fix Session Status = ACTIVE
+
+No TTFF available
+
+
+OK
+###[ OK ]AT!GPSSATINFO?
+Satellites in view:  2
+* SV: 15  ELEV: 27  AZI:   49  SNR: 22
+* SV: 72  ELEV: 23  AZI:  146  SNR: 16
+
+OK
+###[FAIL] No Fix YetAT!GPSLOC?
+Not Available
+
+
+OK
+###processor	: 0
+model name	: ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS	: 2.00
+Features	: swp half thumb fastmult vfp edsp java tls 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 7
+
+Hardware	: BCM2708
+Revision	: 000e
+Serial		: 0000000076160511
+###not yet initialised###[FAIL] No Fix YetAT!GPSLOC?
+Not Available
+
+
+OK
+###not yet initalised###not yet initalised###not yet initalised###not yet initalised###2014-10-11 15:18:14###not yet initalised###not yet initalised
